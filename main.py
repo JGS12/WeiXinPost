@@ -71,13 +71,15 @@ def get_Week_Classes(w):
 
 
 # # 获取今日课程
-# def get_Today_Class():
-#     year = localtime().tm_year
-#     month = localtime().tm_mon
-#     day = localtime().tm_mday
-#     today = datetime.date(datetime(year=year, month=month, day=day))
-#     todayClasses = get_Week_Classes(None)[today.weekday()]
-#     return todayClasses
+def get_Today_Class():
+    week_classes = get_Week_Classes(None)
+    if week_classes is None or len(week_classes) <= today.weekday():
+        # 处理 week_classes 为 None 或者索引超出范围的情况
+        return []  # 返回一个空列表或者其他默认值作为替代
+    else:
+        todayClasses = week_classes[today.weekday()]
+        return todayClasses
+
 
 
 # 获取指定星期几的课程

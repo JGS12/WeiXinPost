@@ -70,14 +70,14 @@ def get_Week_Classes(w):
     return week_Class
 
 
-# 获取今日课程
-def get_Today_Class():
-    year = localtime().tm_year
-    month = localtime().tm_mon
-    day = localtime().tm_mday
-    today = datetime.date(datetime(year=year, month=month, day=day))
-    todayClasses = get_Week_Classes(None)[today.weekday()]
-    return todayClasses
+# # 获取今日课程
+# def get_Today_Class():
+#     year = localtime().tm_year
+#     month = localtime().tm_mon
+#     day = localtime().tm_mday
+#     today = datetime.date(datetime(year=year, month=month, day=day))
+#     todayClasses = get_Week_Classes(None)[today.weekday()]
+#     return todayClasses
 
 
 # 获取指定星期几的课程
